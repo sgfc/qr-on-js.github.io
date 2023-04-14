@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRコード生成</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>QRコード生成</h1>
+        <input type="text" id="url-input" placeholder="URLを入力してください">
+        <label for="text-input">QRコード中央の文字:</label>
+        <input type="text" id="text-input" placeholder="中央に表示する文字">
+        <button id="generate-button">QRコード生成</button>
+        <div id="qr-code-wrapper">
+            <div id="qr-code"></div>
+            <div id="qr-code-text" class="qr-text"></div>
+          </div>
+        <button id="save-button" disabled>画像を保存</button>
+    </div>
+    <script src="qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
