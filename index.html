@@ -20,12 +20,12 @@
         <input type="text" id="text-input" placeholder="中央に表示する文字">
         <button id="generate-button">QRコード生成</button>
         <div id="qr-code-wrapper">
+            <canvas id="qr-code-canvas" height="1px"></canvas>
             <div id="qr-code"></div>
-            <div id="qr-code-text" class="qr-text"></div>
           </div>
         <button id="save-button" disabled>画像を保存</button>
     </div>
-    <script src="qrcode.min.js"></script>
+    <script src="qrcode.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
