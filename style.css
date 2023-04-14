@@ -47,6 +47,19 @@ input {
     pointer-events: none; /* クリックイベントを無効にする */
 }
 
+.qr-text:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5); /* 背景色を設定 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px; /* 余白を設定 */
+    margin: -5px; /* 余白を打ち消すためのマージン */
+}
+
 label {
     display: block;
     margin-top: 1rem;

@@ -48,11 +48,24 @@ document.getElementById('save-button').addEventListener('click', async () => {
     const ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0);
     
+    // テキストの幅と高さを計算
+    const text = textInput.value;
+    const fontSize = 24; // フォントサイズを適切に調整してください
+    ctx.font = `bold ${fontSize}px sans-serif`;
+    const textMetrics = ctx.measureText(text);
+    const textWidth = textMetrics.width;
+    const textHeight = fontSize;
+
+    // 背景の四角形を描画
+    const padding = 5; // 余白を調整してください
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; // 背景色を適切に設定してください
+    ctx.fillRect(canvas.width / 2 - textWidth / 2 - padding, canvas.height / 2 - textHeight / 2 - padding, textWidth + padding * 2, textHeight + padding * 2);
+
     // テキストをキャンバスに描画
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
-    ctx.font = 'bold 1.5rem sans-serif';
-    ctx.fillText(textInput.value, canvas.width / 2, canvas.height / 2);
+    ctx.textBaseline = 'middle'; // 追加
+    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
 
     // キャンバスから画像を生成し、ダウンロード
     const link = document.createElement('a');
