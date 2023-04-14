@@ -17,14 +17,6 @@ document.getElementById('generate-button').addEventListener('click', () => {
         correctLevel: QRCode.CorrectLevel.H
     };
 
-    // 入力された文字がある場合、QRコードの中央に表示
-    if (textInput.value) {
-        options.text = url + textInput.value; // URLと入力文字を結合
-        options.pdground = '#ffffff'; // QRコード内の背景色を設定
-        options.pdcolor = '#000000'; // QRコード内の文字色を設定
-        options.pdsize = 4; // QRコード内の文字サイズを設定（パーセンテージ）
-    }
-
     const qrCode = new QRCode(qrCodeContainer, options);
     document.getElementById('save-button').disabled = false; // 保存ボタンを有効にする
 
